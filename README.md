@@ -1,5 +1,5 @@
 # circular_panner
-simple vbap implementation for pure data
+simple 8 channel vbap implementation for pure data
 
 uses [Ville Pullki's vbap algorithm](http://legacy.spa.aalto.fi/research/cat/vbap/)
 
