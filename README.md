@@ -1,7 +1,7 @@
 # circular_panner
 simple vbap implementation for pure data
 
-uses ville pullke's vbap algorithm
+uses [Ville Pullki's vbap algorithm](http://legacy.spa.aalto.fi/research/cat/vbap/)
 
 depends on 2 external libraries for pd
 vpab and pddp
