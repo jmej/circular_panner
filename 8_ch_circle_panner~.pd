@@ -1,0 +1,136 @@
+#N canvas -8 -8 1920 1037 10;
+#X floatatom 496 144 5 0 0 2 - - -, f 5;
+#X obj 499 128 hsl 100 13 0 360 0 0 empty empty azimuth 10 7 0 10 -262144
+-1 -1 3049 1;
+#X floatatom 574 183 5 0 0 2 - - -, f 5;
+#X obj 577 166 hsl 100 13 0 100 0 0 empty empty spread 10 7 0 10 -262144
+-1 -1 0 1;
+#X obj 430 111 metro 100;
+#X obj 430 89 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X text 644 143 (0-360);
+#X text 604 125 (0-360);
+#X obj 462 292 vbap 90 0 30;
+#X obj 462 347 route 0 1 2 3 4 5 6 7;
+#X text 17 15 requires vbap and pddp installed via package manager
+;
+#X obj 102 438 jrange 0 1 0 127;
+#X obj 102 477 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 219 439 jrange 0 1 0 127;
+#X obj 219 478 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 656 1;
+#X obj 336 441 jrange 0 1 0 127;
+#X obj 336 480 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 9672 1;
+#X obj 453 442 jrange 0 1 0 127;
+#X obj 453 481 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 8201 1;
+#X obj 567 442 jrange 0 1 0 127;
+#X obj 567 481 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 252 1;
+#X obj 684 443 jrange 0 1 0 127;
+#X obj 684 482 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 801 445 jrange 0 1 0 127;
+#X obj 801 484 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 918 446 jrange 0 1 0 127;
+#X obj 918 485 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X msg 100 194 define_loudspeakers 2 0 45 90 135 180 -135 -90 -45;
+#X obj 225 51 loadbang;
+#X obj 223 79 t b b;
+#X obj 675 33 inlet spread;
+#X obj 569 30 inlet azimuth;
+#X obj 55 658 *~;
+#X obj 55 43 inlet audio;
+#X obj 55 72 send~ \$0-audio;
+#X obj 55 627 receive~ \$0-audio;
+#X obj 54 693 outlet~;
+#X obj 205 658 *~;
+#X obj 205 627 receive~ \$0-audio;
+#X obj 204 693 outlet~;
+#X obj 329 659 *~;
+#X obj 329 628 receive~ \$0-audio;
+#X obj 328 694 outlet~;
+#X obj 461 660 *~;
+#X obj 461 629 receive~ \$0-audio;
+#X obj 460 695 outlet~;
+#X obj 585 659 *~;
+#X obj 585 628 receive~ \$0-audio;
+#X obj 584 694 outlet~;
+#X obj 735 659 *~;
+#X obj 735 628 receive~ \$0-audio;
+#X obj 734 694 outlet~;
+#X obj 859 660 *~;
+#X obj 859 629 receive~ \$0-audio;
+#X obj 858 695 outlet~;
+#X obj 991 661 *~;
+#X obj 991 630 receive~ \$0-audio;
+#X obj 990 696 outlet~;
+#X obj 991 140 line;
+#X obj 991 55 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 991 80 metro 5000;
+#X msg 991 112 0 \, 360 5000;
+#X text 124 174 sets up 8 evenly spaced speakers around a circle;
+#X text 1045 54 example circle pan;
+#X connect 0 0 8 1;
+#X connect 1 0 0 0;
+#X connect 2 0 8 3;
+#X connect 3 0 2 0;
+#X connect 4 0 8 0;
+#X connect 5 0 4 0;
+#X connect 8 0 9 0;
+#X connect 9 0 11 0;
+#X connect 9 1 13 0;
+#X connect 9 2 15 0;
+#X connect 9 3 17 0;
+#X connect 9 4 19 0;
+#X connect 9 5 21 0;
+#X connect 9 6 23 0;
+#X connect 9 7 25 0;
+#X connect 11 0 12 0;
+#X connect 11 0 32 1;
+#X connect 13 0 14 0;
+#X connect 13 0 37 1;
+#X connect 15 0 16 0;
+#X connect 15 0 41 0;
+#X connect 17 0 18 0;
+#X connect 17 0 44 0;
+#X connect 19 0 20 0;
+#X connect 19 0 47 0;
+#X connect 21 0 22 0;
+#X connect 21 0 50 0;
+#X connect 23 0 24 0;
+#X connect 23 0 53 0;
+#X connect 25 0 26 0;
+#X connect 25 0 56 0;
+#X connect 27 0 8 0;
+#X connect 28 0 29 0;
+#X connect 29 0 5 0;
+#X connect 29 1 27 0;
+#X connect 30 0 3 0;
+#X connect 31 0 1 0;
+#X connect 32 0 36 0;
+#X connect 33 0 34 0;
+#X connect 35 0 32 0;
+#X connect 37 0 39 0;
+#X connect 38 0 37 0;
+#X connect 40 0 42 0;
+#X connect 41 0 40 0;
+#X connect 43 0 45 0;
+#X connect 44 0 43 0;
+#X connect 46 0 48 0;
+#X connect 47 0 46 0;
+#X connect 49 0 51 0;
+#X connect 50 0 49 0;
+#X connect 52 0 54 0;
+#X connect 53 0 52 0;
+#X connect 55 0 57 0;
+#X connect 56 0 55 0;
+#X connect 58 0 1 0;
+#X connect 59 0 60 0;
+#X connect 60 0 61 0;
+#X connect 61 0 58 0;
